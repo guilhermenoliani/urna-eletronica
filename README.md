@@ -1,6 +1,6 @@
 # Urna Eletrônica - Material de estudo
 
-    Urna Eletrônica refeito em aula com o professor Bonieky Lacerda - B7Web
+    Urna Eletrônica refeito 
     Feito com as tecnologias HTML5, CSS3 e JavaScript.
 
 ## Número dos candidatos
