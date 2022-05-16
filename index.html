@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo/favicon.png"
+      type="image/x-icon"
+    />
     <title>Urna Eletrônica</title>
-</head>
-<body>
-    <div class="urna">
-        <div class="tela">
-            <div class="d-1">
-                <div class="d-1-left">
-                    <div class="d-1-1">
-                        <span>SEU VOTO PARA:</span>
-                    </div>
-                    <div class="d-1-2">
-                        <span>VEREADOR</span>
-                    </div>
-                    <div class="d-1-3">
-                        <div class="quadrado pisca"></div>
-                        <div class="quadrado"></div>
-                        
-                    </div>
-                    <div class="d-1-4">
-                        Nome: Fulano <br>
-                        Partido: qqq <br>
-                        Vice-Prefeito: Outro fulano
-                    </div>
-                </div>
-                <div class="d-1-right">
-                    <div class="d-1-image">
-                        <img src="./images/84.jpg" alt="" srcset="">
-                        PREFEITO
-                    </div>
-                    <div class="d-1-image small">
-                        <img src="./images/84_2.jpg" alt="" srcset="">
-                        VICE-PREFEITO
-                    </div>
-                </div>
+  </head>
+  <body>
+    <div id="container--urn">
+      <div id="screen--urn-container">
+        <div id="upside">
+          <div id="upside--left">
+            <div id="upside--text">
+              <span>SEU VOTO PARA</span>
             </div>
-            <div class="d-2">
-                Aperte a tela : <br>
-                <span class="s1">CONFIRMA</span> para CONFIRMAR este voto <br>
-                <span class="s2">CORRIGE</span> para REINICIAR este voto
+            <div id="upside--office">
+              <span>VEREADOR</span>
             </div>
+            <div id="upside--number-container">
+              <span>Numero:</span>
+              <div id="number-item" class="pisca">1</div>
+              <div id="number-item">2</div>
+              <div id="number-item"></div>
+              <div id="number-item"></div>
+              <div id="number-item"></div>
+            </div>
+            <div id="upside--information">
+              Nome: <br />
+              Partido: <br />
+              Vice-Prefeito:
+            </div>
+          </div>
+
+          <div id="upside--right">
+            <div id="upside--right-image">
+              <img src="./assets/images/84.jpg" alt="" />
+              Prefeito
+            </div>
+            <div id="upside--right-image" class="small">
+              <img src="./assets/images/84_2.jpg" alt="" />
+              Vice-Prefeito
+            </div>
+          </div>
         </div>
-        <div class="teclado">
-            <div class="teclado--linha">
-                <div class="teclado--botao" onclick="clicou('1')">1</div>
-                <div class="teclado--botao" onclick="clicou('2')">2</div>
-                <div class="teclado--botao" onclick="clicou('3')">3</div>
-            </div>
-            <div class="teclado--linha">
-                <div class="teclado--botao" onclick="clicou('4')">4</div>
-                <div class="teclado--botao" onclick="clicou('5')">5</div>
-                <div class="teclado--botao" onclick="clicou('6')">6</div>
-            </div>
-            <div class="teclado--linha">
-                <div class="teclado--botao" onclick="clicou('7')">7</div>
-                <div class="teclado--botao" onclick="clicou('8')">8</div>
-                <div class="teclado--botao" onclick="clicou('9')">9</div>
-            </div>
-            <div class="teclado--linha">
-                <div class="teclado--botao" onclick="clicou('0')">0</div>
-            </div>
-            <div class="teclado--linha">
-                <div class="teclado--botao botao-branco" onclick="branco()">BRANCO</div>
-                <div class="teclado--botao botao-corrige" onclick="corrige()">CORRIGE</div>
-                <div class="teclado--botao botao-confirma" onclick="confirma()">CONFIRMA</div>
-            </div>
-
-        </div>  
-
+        <div id="part-down">
+          Aperte a tecla: <br />
+          <p>
+            VERDE para CONFIRMAR este voto <br />
+            LARANJA para REINICIAR este voto
+          </p>
+        </div>
+      </div>
+      <div id="keyboard--urn-container">
+        <div id="keyboard--line">
+          <div id="keyboard--button">1</div>
+          <div id="keyboard--button">2</div>
+          <div id="keyboard--button">3</div>
+        </div>
+        <div id="keyboard--line">
+          <div id="keyboard--button">4</div>
+          <div id="keyboard--button">5</div>
+          <div id="keyboard--button">6</div>
+        </div>
+        <div id="keyboard--line">
+          <div id="keyboard--button">7</div>
+          <div id="keyboard--button">8</div>
+          <div id="keyboard--button">9</div>
+        </div>
+        <div id="keyboard--line">
+          <div id="keyboard--button">0</div>
+        </div>
+        <div id="keyboard--line">
+          <div class="btn-white" id="keyboard--button">Branco</div>
+          <div id="keyboard--button" class="btn-correct">Corrige</div>
+          <div id="keyboard--button" class="btn-confirm">Confirma</div>
+        </div>
+      </div>
     </div>
 
-
-    <script src="./etapas.js" ></script>
-    <script src="./script.js" ></script>
-</body>
+    <script src="./assets/js/etapas.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
