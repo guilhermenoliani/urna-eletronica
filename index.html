@@ -24,7 +24,6 @@
               <span>VEREADOR</span>
             </div>
             <div id="upside--number-container">
-              <span>Numero:</span>
               <div id="number-item" class="pisca"></div>
               <div id="number-item"></div>
             </div>
@@ -56,27 +55,33 @@
       </div>
       <div id="keyboard--urn-container">
         <div id="keyboard--line">
-          <div id="keyboard--button">1</div>
-          <div id="keyboard--button">2</div>
-          <div id="keyboard--button">3</div>
+          <div id="keyboard--button" onclick="clickBtn(1)">1</div>
+          <div id="keyboard--button" onclick="clickBtn(2)">2</div>
+          <div id="keyboard--button" onclick="clickBtn(3)">3</div>
         </div>
         <div id="keyboard--line">
-          <div id="keyboard--button">4</div>
-          <div id="keyboard--button">5</div>
-          <div id="keyboard--button">6</div>
+          <div id="keyboard--button" onclick="clickBtn(4)">4</div>
+          <div id="keyboard--button" onclick="clickBtn(5)">5</div>
+          <div id="keyboard--button" onclick="clickBtn(6)">6</div>
         </div>
         <div id="keyboard--line">
-          <div id="keyboard--button">7</div>
-          <div id="keyboard--button">8</div>
-          <div id="keyboard--button">9</div>
+          <div id="keyboard--button" onclick="clickBtn(7)">7</div>
+          <div id="keyboard--button" onclick="clickBtn(8)">8</div>
+          <div id="keyboard--button" onclick="clickBtn(9)">9</div>
         </div>
         <div id="keyboard--line">
-          <div id="keyboard--button">0</div>
+          <div id="keyboard--button" onclick="clickBtn(0)">0</div>
         </div>
         <div id="keyboard--line">
-          <div class="btn-white" id="keyboard--button">Branco</div>
-          <div id="keyboard--button" class="btn-correct">Corrige</div>
-          <div id="keyboard--button" class="btn-confirm">Confirma</div>
+          <div class="btn-white" id="keyboard--button" onclick="whiteBtn()">
+            Branco
+          </div>
+          <div id="keyboard--button" class="btn-correct" onclick="correctBtn()">
+            Corrige
+          </div>
+          <div id="keyboard--button" class="btn-confirm" onclick="confirmBtn()">
+            Confirma
+          </div>
         </div>
       </div>
     </div>
