@@ -26,13 +26,12 @@ const startStage = () => {
   //Criando o número de caixas correspondente ao número dos candidatos
   let numberHtml = "";
   for (let i = 0; i < stage.numbers; i++) {
-    if (i === 0) {
-      //Box com a class pisca sendo criada
-      numberHtml += '<div id="number-item" class="pisca"></div>';
-    } else {
-      //Box sem a class pisca
-      numberHtml += '<div id="number-item"></div>';
-    }
+    //Condição
+    i === 0
+      ? //Box com a class pisca sendo criada
+        (numberHtml += '<div id="number-item" class="pisca"></div>')
+      : //Box sem a class pisca
+        (numberHtml += '<div id="number-item"></div>');
   }
 
   //Removendo itens da tela
@@ -57,11 +56,11 @@ const clickBtn = (n) => {
 
     numFlashes.classList.remove("pisca"); //Tirando a class pisca quando um número é digitado
 
-    if (numFlashes.nextElementSibling !== null) {
-      numFlashes.nextElementSibling.classList.add("pisca"); //Entrando no próximo box e adicionando a class pisca
-    } else {
-      updateInterface();
-    }
+    //Condição
+    numFlashes.nextElementSibling !== null
+      ? //Entrando no próximo box e adicionando a class pisca
+        numFlashes.nextElementSibling.classList.add("pisca")
+      : updateInterface();
   }
 };
 
