@@ -43,4 +43,34 @@ let etapas = [
       },
     ],
   },
+  {
+    title: "Presidente",
+    numbers: 2,
+    candidates: [
+      {
+        number: "10",
+        name: "Floquinho",
+        party: "AU-AU",
+        vice: "Jotinha",
+        photo: [
+          { url: "../assets/images/10.jpg", legend: "Presidente" },
+          {
+            url: "../assets/images/10_2.jpg",
+            legend: "Vice-Presidente",
+            small: true,
+          },
+        ],
+      },
+      {
+        number: "20",
+        name: "Fofuxo",
+        party: "MIAU",
+        vice: "mits",
+        photo: [
+          { url: "../assets/images/20.jpg", legend: "Presidente" },
+          { url: "../assets/images/20_2.jpg", legend: "Vice-Presidente" },
+        ],
+      },
+    ],
+  },
 ];
