@@ -35,7 +35,7 @@ const startStage = () => {
   }
 
   //Removendo itens da tela
-  voteFor.innerHTML = "";
+  voteFor.style.display = "none";
   office.innerHTML = stage.title; //Adicionando cargo
   voteBox.innerHTML = numberHtml; //Preenchendo com a quantidade de caixas certa
   information.innerHTML = "";
@@ -44,7 +44,41 @@ const startStage = () => {
 };
 
 //Função para atualizar a interface
-const updateInterface = () => {};
+const updateInterface = () => {
+  let stage = etapas[currentStage]; //Pegando a etapa atual novamente
+
+  //Variável que vai filtrar o número de cada candidato
+  let candidato = stage.candidates.filter((item) => {
+    if (item.number === typedNumber) {
+      // se o número digitado pelo eleitor dor igual ao número do candidato ele retorna true e um array com o candidato
+      return true;
+    } else {
+      //Caso não for igual ao número de nenhum candidato ele retornará false e um array vazio
+      return false;
+    }
+  });
+
+  if (candidato.length > 0) {
+    candidato = candidato[0];
+    //adicionando os itens na tela
+    voteFor.style.display = "block"; //Voto para. Aparece na tela
+    information.innerHTML = `Nome: ${candidato.name} <br> Partido: ${candidato.party}<br>`; // Informações do candidato aparecem na tela
+    instructions.style.display = "block"; // Instruções de botões aparece na tela
+
+    //Aparecer na tela a foto do candidato
+    let photosHtml = "";
+    for (let i in candidato.photo) {
+      photosHtml += `<div id="upside--right-image"><img src="${candidato.photo[i].url}" alt="" />${candidato.photo[i].legend}</div>`;
+    }
+
+    candidatesImg.innerHTML = photosHtml;
+  } else {
+    voteFor.style.display = "block";
+    information.innerHTML = `<div class="alert--big pisca">VOTO NULO</div>`; // Voto NULO aparece na tela
+    instructions.style.display = "block"; // Instruções de botões aparece na tela
+    candidatesImg.innerHTML = "";
+  }
+};
 
 //Função para os botões do teclado
 const clickBtn = (n) => {

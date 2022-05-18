@@ -7,13 +7,13 @@ let etapas = [
         number: "38111",
         name: "Fulano de Tal",
         party: "ABC",
-        photo: [{ url: "38111.jpg", legenda: "Vereador" }],
+        photo: [{ url: "../assets/images/38111.jpg", legend: "Vereador" }],
       },
       {
         number: "77222",
         name: "Beltrano da Silva",
         party: "DEFG",
-        photo: [{ url: "77222.jpg", legenda: "Vereador" }],
+        photo: [{ url: "../assets/images/77222.jpg", legend: "Vereador" }],
       },
     ],
   },
@@ -27,8 +27,12 @@ let etapas = [
         party: "ABC",
         vice: "Cic",
         photo: [
-          { url: "99.jpg", legend: "Prefeito" },
-          { url: "99_2.jpg", legend: "Vice-Prefeito", small: true },
+          { url: "../assets/images/99.jpg", legend: "Prefeito" },
+          {
+            url: "../assets/images/99_2.jpg",
+            legend: "Vice-Prefeito",
+            small: true,
+          },
         ],
       },
       {
@@ -37,8 +41,12 @@ let etapas = [
         party: "QWERTY",
         vice: "Zul",
         photo: [
-          { url: "84.jpg", legend: "Prefeito" },
-          { url: "84_2.jpg", legend: "Vice-Prefeito", small: true },
+          { url: "../assets/images/84.jpg", legend: "Prefeito" },
+          {
+            url: "../assets/images/84_2.jpg",
+            legend: "Vice-Prefeito",
+            small: true,
+          },
         ],
       },
     ],
@@ -68,7 +76,11 @@ let etapas = [
         vice: "mits",
         photo: [
           { url: "../assets/images/20.jpg", legend: "Presidente" },
-          { url: "../assets/images/20_2.jpg", legend: "Vice-Presidente" },
+          {
+            url: "../assets/images/20_2.jpg",
+            legend: "Vice-Presidente",
+            small: true,
+          },
         ],
       },
     ],
