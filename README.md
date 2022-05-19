@@ -25,8 +25,8 @@ Refatoração de código iniciada dia 16/05/2022. Para melhor entendimento e mel
 
 ## Screenshots
 
-![App Screenshot](./images/screenshots/1.jpg)
-![App Screenshot](./images/screenshots/2.jpg)
+![App Screenshot](/assets/images/screenshots/urna1.jpg)
+![App Screenshot](./assets/images/screenshots/urna2.jpg)
 
 ## Modo de utilização
 
