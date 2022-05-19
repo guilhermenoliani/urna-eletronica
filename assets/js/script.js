@@ -19,6 +19,9 @@ let typedNumber = "";
 //Variável para habilitar botão branco
 let white = false;
 
+//Variável para armazenar os votos
+let votes = [];
+
 //Funções
 
 //Função para começar as etapas
@@ -133,11 +136,19 @@ const confirmBtn = () => {
   let voteConfirmed = false;
 
   if (white === true) {
-    voteConfirmed = true;
-    console.log("Confirmando voto em branco");
+    voteConfirmed = true; // Confirmando que foi votado
+    votes.push({
+      // Salvando voto, se for branco
+      stage: etapas[currentStage].title,
+      vote: "Branco",
+    });
   } else if (typedNumber.length === stage.numbers) {
     voteConfirmed = true;
-    console.log("confirmando como" + typedNumber);
+    votes.push({
+      // salvando voto e preenchendo
+      stage: etapas[currentStage].title,
+      vote: typedNumber,
+    });
   }
 
   if (voteConfirmed) {
@@ -145,7 +156,10 @@ const confirmBtn = () => {
     if (etapas[currentStage] !== undefined) {
       startStage();
     } else {
-      console.log("FIM!");
+      qS(
+        "#screen--urn-container"
+      ).innerHTML = `<div class="alert--gig pisca" >FIM</div>`;
+      console.log(votes); // Votos salvos no console.log
     }
   }
 };
