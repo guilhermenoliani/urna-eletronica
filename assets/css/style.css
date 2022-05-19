@@ -166,7 +166,13 @@ body {
   margin-top: 40px;
   font-weight: 500;
 }
-
+.alert--gig {
+  font-size: 80px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*Animações*/
 @keyframes pisca {
   0% {
