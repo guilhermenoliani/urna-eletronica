@@ -17,7 +17,7 @@ Este projeto é baseado na lógica do sistema de votação brasileira, a urna el
 
 ## Documentação
 
-[Documentação no Notion](https://guilhermeoliani.notion.site/Projeto-Compra-de-Pizzas-bface67453b246e489ea89d44571d32c)
+[Documentação no Notion](https://guilhermeoliani.notion.site/Projeto-Urna-Eletr-nica-73268c4d1320412c8f650d5ebb32d843)
 
 ## Melhorias
 
