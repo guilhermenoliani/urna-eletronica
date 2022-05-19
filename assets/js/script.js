@@ -10,12 +10,14 @@ let candidatesImg = qS("#upside--right"); // Selecionando imagem dos candidatos.
 let instructions = qS("#part-down"); //Selecionando instruções da tela da parte de baixo.
 
 //Variáveis de ambiente
-
 //Variável para saber qual etapa está
 let currentStage = 0;
 
 //Variável para saber qual é o número que está sendo digitado
 let typedNumber = "";
+
+//Variável para habilitar botão branco
+let white = false;
 
 //Funções
 
@@ -25,6 +27,8 @@ const startStage = () => {
 
   //Criando o número de caixas correspondente ao número dos candidatos
   let numberHtml = "";
+  typedNumber = "";
+  white = false;
   for (let i = 0; i < stage.numbers; i++) {
     //Condição
     i === 0
@@ -68,7 +72,11 @@ const updateInterface = () => {
     //Aparecer na tela a foto do candidato
     let photosHtml = "";
     for (let i in candidato.photo) {
-      photosHtml += `<div id="upside--right-image"><img src="${candidato.photo[i].url}" alt="" />${candidato.photo[i].legend}</div>`;
+      if (candidato.photo[i].small) {
+        photosHtml += `<div id="upside--right-image" class="small"><img src="${candidato.photo[i].url}" alt="" />${candidato.photo[i].legend}</div>`;
+      } else {
+        photosHtml += `<div id="upside--right-image"><img src="${candidato.photo[i].url}" alt="" />${candidato.photo[i].legend}</div>`;
+      }
     }
 
     candidatesImg.innerHTML = photosHtml;
@@ -99,12 +107,47 @@ const clickBtn = (n) => {
 };
 
 //Função para o botão branco
-const whiteBtn = () => {};
+const whiteBtn = () => {
+  if (typedNumber === "") {
+    white = true;
+    voteFor.style.display = "block"; //Mostrando "SEU VOTO PARA"
+    instructions.style.display = "block"; // Mostrando as instruções
+    voteBox.innerHTML = ""; // Tirando as box de números
+    information.innerHTML = `<div class="alert--big pisca" style='font-size:40px'>VOTO EM BRANCO</div>`; // Digitando na tela
+  } else {
+    alert(
+      "Para votar em branco, aperte no botão corrigir e depois em BRANCO novamente"
+    );
+  }
+};
 
 //Função para o botão corrigir
-const correctBtn = () => {};
+const correctBtn = () => {
+  startStage();
+};
 
 //Função para o botão confirma
-const confirmBtn = () => {};
+const confirmBtn = () => {
+  let stage = etapas[currentStage];
+
+  let voteConfirmed = false;
+
+  if (white === true) {
+    voteConfirmed = true;
+    console.log("Confirmando voto em branco");
+  } else if (typedNumber.length === stage.numbers) {
+    voteConfirmed = true;
+    console.log("confirmando como" + typedNumber);
+  }
+
+  if (voteConfirmed) {
+    currentStage++;
+    if (etapas[currentStage] !== undefined) {
+      startStage();
+    } else {
+      console.log("FIM!");
+    }
+  }
+};
 
 startStage();
